@@ -1,14 +1,16 @@
 package day01
 
+import java.io.File
+
 fun main() {
-    fun part1() {
-        println("Part 1!")
-    }
+    val elves = File("src/main/kotlin/day01/day01.txt").readText()
+        .split("${System.lineSeparator()}${System.lineSeparator()}")
+        .map { elf -> elf.split(System.lineSeparator()).sumOf { it.toInt() } }
 
-    fun part2() {
-        println("Part 2!")
-    }
+    fun part1(): Int = elves.max()
 
-    part1()
-    part2()
+    fun part2(): Int = elves.sortedDescending().take(3).sum()
+
+    println(part1())
+    println(part2())
 }
