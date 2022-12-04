@@ -7,9 +7,9 @@ fun main() {
         .split("${System.lineSeparator()}${System.lineSeparator()}")
         .map { elf -> elf.split(System.lineSeparator()).sumOf { it.toInt() } }
 
-    fun part1(): Int = elves.max()
+    fun part1() = elves.max()
 
-    fun part2(): Int = elves.sortedDescending().take(3).sum()
+    fun part2() = elves.sortedDescending().take(3).sum()
 
     println(part1())
     println(part2())
